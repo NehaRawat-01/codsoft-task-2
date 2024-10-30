@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsletter Section</title>
+    <style>
+        .newsletter-container {
+            background-color: #fff;
+            display: flex;
+            max-width: 480px;
+            width: 100%;
+            flex-direction: column;
+            overflow: hidden;
+            margin: 0 auto;
+            font-family: Inter, sans-serif;
+        }
+        .hero-section {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            aspect-ratio: 1.204;
+            width: 100%;
+            padding: 32px 25px 53px;
+        }
+        .hero-background {
+            position: absolute;
+            inset: 0;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+        .hero-content {
+            position: relative;
+            display: flex;
+            align-items: flex-start;
+        }
+        .hero-text {
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .hero-logo {
+            aspect-ratio: 1;
+            object-fit: contain;
+            object-position: center;
+            width: 71px;
+        }
+        .hero-title {
+            color: #000;
+            font-size: 12px;
+            font-weight: 600;
+            margin-top: 41px;
+        }
+        .hero-description {
+            color: rgba(0, 0, 0, 0.7);
+            font-size: 10px;
+            font-weight: 400;
+            margin-top: 11px;
+        }
+        .newsletter-signup {
+            display: flex;
+            margin-top: 17px;
+            flex-direction: column;
+            font-size: 14px;
+            color: rgba(0, 0, 0, 0.8);
+            font-weight: 600;
+        }
+        .newsletter-label {
+            align-self: flex-end;
+        }
+        .newsletter-image {
+            aspect-ratio: 1;
+            object-fit: contain;
+            object-position: center;
+            width: 150px;
+            margin-top: 25px;
+        }
+        .cta-button {
+            border-radius: 5px;
+            background-color: rgba(255, 64, 0, 0.8);
+            align-self: flex-start;
+            font-size: 10px;
+            color: #fff;
+            font-weight: 700;
+            padding: 9px 28px;
+            text-decoration: none;
+        }
+        .features-section {
+            display: flex;
+            margin-top: 9px;
+            width: 100%;
+            flex-direction: column;
+            padding: 0 41px;
+        }
+        .features-tag {
+            color: #ff4444;
+            align-self: center;
+            font: 600 10px Inter, sans-serif;
+        }
+        .features-title {
+            color: #000;
+            letter-spacing: 0.8px;
+            align-self: center;
+            margin-top: 18px;
+            font: 600 16px Inter, sans-serif;
+        }
+        .features-grid {
+            display: flex;
+            margin-top: 35px;
+            gap: 18px;
+        }
+        .feature-item {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            flex: 1;
+        }
+        .feature-icon {
+            border-radius: 50%;
+            display: flex;
+            width: 25px;
+            height: 25px;
+        }
+        .feature-icon-timer {
+            background-color: rgba(72, 193, 92, 0.8);
+        }
+        .feature-icon-measure {
+            background-color: rgba(245, 178, 83, 0.8);
+        }
+        .feature-name {
+            color: #000;
+            font-size: 10px;
+            font-weight: 600;
+            margin-top: 13px;
+        }
+        .feature-description {
+            color: rgba(0, 0, 0, 0.9);
+            font-size: 8px;
+            font-weight: 300;
+            margin-top: 6px;
+        }
+        .additional-features {
+            display: flex;
+            margin-top: 31px;
+            width: 197px;
+            max-width: 100%;
+            align-items: flex-start;
+            gap: 20px;
+            justify-content: space-between;
+        }
+        .feature-icon-slider {
+            background-color: rgba(255, 95, 46, 0.8);
+        }
+        .feature-icon-users {
+            background-color: rgba(60, 164, 244, 0.8);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 0 5px;
+        }
+        .feature-icon-image {
+            aspect-ratio: 1;
+            object-fit: contain;
+            object-position: center;
+            width: 15px;
+        }
+        .feature-names {
+            display: flex;
+            margin-top: 13px;
+            width: 200px;
+            max-width: 100%;
+            gap: 20px;
+            color: #000;
+            white-space: nowrap;
+            justify-content: space-between;
+            font: 600 10px Inter, sans-serif;
+        }
+        .feature-descriptions {
+            align-self: flex-start;
+            display: flex;
+            margin-top: 7px;
+            gap: 18px;
+            color: rgba(0, 0, 0, 0.9);
+            font: 300 8px Inter, sans-serif;
+        }
+        .cta-button-large {
+            border-radius: 5px;
+            background-color: rgba(255, 64, 0, 0.8);
+            align-self: center;
+            margin-top: 18px;
+            width: 150px;
+            max-width: 100%;
+            color: #fff;
+            padding: 9px 29px;
+            font: 700 10px Inter, sans-serif;
+            text-decoration: none;
+            text-align: center;
+        }
+        .footer-section {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            aspect-ratio: 2.042;
+            gap: 20px;
+            justify-content: space-between;
+            padding: 48px 23px;
+        }
+        .footer-background {
+            position: absolute;
+            inset: 0;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+        .social-icons {
+            position: relative;
+            align-self: flex-end;
+            display: flex;
+            margin-top: 75px;
+            gap: 10px;
+        }
+        .social-icon {
+            aspect-ratio: 1;
+            object-fit: contain;
+            object-position: center;
+            width: 20px;
+        }
+        .social-icon-twitter {
+            aspect-ratio: 1.33;
+            align-self: flex-start;
+            margin-top: 5px;
+        }
+        .footer-content {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            color: rgba(0, 0, 0, 0.9);
+            font: 300 10px Inter, sans-serif;
+        }
+        .footer-logo {
+            aspect-ratio: 1;
+            object-fit: contain;
+            object-position: center;
+            width: 40px;
+        }
+        .footer-text {
+            text-align: right;
+            margin-top: 11px;
+        }
+        .unsubscribe-wrapper {
+            display: flex;
+            margin-top: 9px;
+            width: 63px;
+            flex-direction: column;
+            white-space: nowrap;
+            padding: 1px 0;
+        }
+        .unsubscribe-icon {
+            object-fit: contain;
+            object-position: center;
+            width: 100%;
+            z-index: 10;
+        }
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+    <section class="newsletter-container">
+        <header class="hero-section">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/9be5a7a1c36ffba01ad8793cbc90825ded7147c9e35b89ed5b4e30beb8528325?placeholderIfAbsent=true&apiKey=ec9b3c3dc95d4e7cbc4a3d853a23450a" alt="" class="hero-background" />
+            <div class="hero-content">
+                <div class="hero-text">
+                    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/014533b261ff85aad2dc4f9bd1b4924a71635688f2d83be1df820c4f4e01ea67?placeholderIfAbsent=true&apiKey=ec9b3c3dc95d4e7cbc4a3d853a23450a" alt="Company Logo" class="hero-logo" />
+                    <h1 class="hero-title">Don't miss out our BIG news!</h1>
+                    <p class="hero-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut augue nulla, mattis eget ante ac</p>
+                </div>
+                <form class="newsletter-signup">
+                    <label for="newsletter-email" class="newsletter-label">Weekly Newsletter</label>
+                    <input type="email" id="newsletter-email" name="email" class="visually-hidden" aria-label="Enter your email for weekly newsletter" required />
+                    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/edfadf9920953d04525ab8e842ab5013fc2a855551bd2708529c73205d68b2b1?placeholderIfAbsent=true&apiKey=ec9b3c3dc95d4e7cbc4a3d853a23450a" alt="Newsletter signup illustration" class="newsletter-image" />
+                </form>
+            </div>
+            <a href="#" class="cta-button">Go to your account</a>
+        </header>
+        <section class="features-section">
+            <p class="features-tag">NEW RELEASES</p>
+            <h2 class="features-title">Checkout our amazing features</h2>
+            <div class="features-grid">
+                <article class="feature-item">
+                    <div class="feature-icon feature-icon-timer" aria-hidden="true"></div>
+                    <h3 class="feature-name">Timer</h3>
+                    <p class="feature-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </article>
+                <article class="feature-item">
+                    <div class="feature-icon feature-icon-measure" aria-hidden="true"></div>
+                    <h3 class="feature-name">Measure tool</h3>
+                    <p class="feature-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </article>
+            </div>
+            <div class="additional-features">
+                <div class="feature-icon feature-icon-slider" aria-hidden="true"></div>
+                <div class="feature-icon feature-icon-users">
+                    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/18b94314322a61af3ee28e64cdd434b6b7808f7477ed2433f16c2cd432d95e31?placeholderIfAbsent=true&apiKey=ec9b3c3dc95d4e7cbc4a3d853a23450a" alt="Users icon" class="feature-icon-image" />
+                </div>
+            </div>
+            <div class="feature-names">
+                <span>Slider</span>
+                <span>Users</span>
+            </div>
+            <div class="feature-descriptions">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            <a href="#" class="cta-button-large">Go to your account</a>
+        </section>
+        <footer class="footer-section">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/75b189a15147f8a3594707177a0a36ac13ab4454779efc6ea81bf4f010769f6f?placeholderIfAbsent=true&apiKey=ec9b3c3dc95d4e7cbc4a3d853a23450a" alt="" class="footer-background" />
+            <div class="social-icons">
+                <a href="#" aria-label="Visit our Facebook page">
+                    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/9779fc417aef27c97ac1244d7434820dd11d450e6e4e2017d05cf11980864920?placeholderIfAbsent=true&apiKey=ec9b3c3dc95d4e7cbc4a3d853a23450a" alt="" class="social-icon" />
+                </a>
+                <a href="#" aria-label="Follow us on Twitter">
+                    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/129bac7bb0eb59b32b2f92354339123bc23c8b2ee5a376efce01007b022be6ba?placeholderIfAbsent=true&apiKey=ec9b3c3dc95d4e7cbc4a3d853a23450a" alt="" class="social-icon social-icon-twitter" />
+                </a>
+                <a href="#" aria-label="Connect with us on LinkedIn">
+                    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/09db4ea9fbf41233dfe2cbf58f3a0e8de0acff903add47ed1a788ab21f7c5e40?placeholderIfAbsent=true&apiKey=ec9b3c3dc95d4e7cbc4a3d853a23450a" alt="" class="social-icon" />
+                </a>
+            </div>
+            <div class="footer-content">
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/3da2f70ed7d2a7228b3898c2d98c39d2e54fb89a9b78e41444b361d3bb57c7e5?placeholderIfAbsent=true&apiKey=ec9b3c3dc95d4e7cbc4a3d853a23450a" alt="Company Logo" class="footer-logo" />
+                <p class="footer-text">You received this email because you signed up on our website or made a purchase from us.</p>
+                <div class="unsubscribe-wrapper">
+                    <a href="#" class="unsubscribe-link">Unsubscribe</a>
+                    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/956b9fd535c3c891c299fa70093a783883282344c51f7626800ea38cf3a6f70f?placeholderIfAbsent=true&apiKey=ec9b3c3dc95d4e7cbc4a3d853a23450a" alt="" class="unsubscribe-icon" aria-hidden="true" />
+                </div>
+            </div>
+        </footer>
+    </section>
+</body>
+</html>
